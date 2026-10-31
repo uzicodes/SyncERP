@@ -141,21 +141,21 @@ const MODULES_DATA: ERPModule[] = [
 function getModuleIcon(name: string) {
   switch (name) {
     case "Layers":
-      return <Layers className="w-5 h-5 text-[#C4D64D]" />;
+      return <Layers className="w-5 h-5 text-[#93032E]" />;
     case "Landmark":
-      return <Landmark className="w-5 h-5 text-[#C4D64D]" />;
+      return <Landmark className="w-5 h-5 text-[#93032E]" />;
     case "Truck":
-      return <Truck className="w-5 h-5 text-[#C4D64D]" />;
+      return <Truck className="w-5 h-5 text-[#93032E]" />;
     case "Network":
-      return <Network className="w-5 h-5 text-[#C4D64D]" />;
+      return <Network className="w-5 h-5 text-[#93032E]" />;
     case "Users":
-      return <Users className="w-5 h-5 text-[#C4D64D]" />;
+      return <Users className="w-5 h-5 text-[#93032E]" />;
     case "UserCheck":
-      return <UserCheck className="w-5 h-5 text-[#C4D64D]" />;
+      return <UserCheck className="w-5 h-5 text-[#93032E]" />;
     case "Factory":
-      return <Factory className="w-5 h-5 text-[#C4D64D]" />;
+      return <Factory className="w-5 h-5 text-[#93032E]" />;
     default:
-      return <Layers className="w-5 h-5 text-[#C4D64D]" />;
+      return <Layers className="w-5 h-5 text-[#93032E]" />;
   }
 }
 
@@ -165,18 +165,18 @@ export default function ModuleDirectory() {
       {MODULES_DATA.map((module) => (
         <div
           key={module.id}
-          className="group bg-[#484D55] hover:bg-[#4E535C] border border-white/10 hover:border-white/20 rounded-xl shadow-lg transition-all duration-200 flex flex-col overflow-hidden hover:-translate-y-0.5"
+          className="group bg-[#1a1a1a] hover:bg-[#202020] border border-[#93032E]/30 hover:border-[#93032E]/50 rounded-xl shadow-lg transition-all duration-200 flex flex-col overflow-hidden hover:-translate-y-0.5"
         >
-          {/* Accent colored top bar #C4D64D */}
-          <div className="h-1.5 bg-[#C4D64D] w-full" />
+          {/* Accent colored top bar #93032E */}
+          <div className="h-1.5 bg-[#93032E] w-full" />
 
           {/* Module Card Header */}
-          <div className="p-5 pb-4 border-b border-white/10 bg-[#3F444C]">
-            <div className="w-10 h-10 rounded-lg bg-[#32363D] border border-white/10 flex items-center justify-center shadow-xs mb-3">
+          <div className="p-5 pb-4 border-b border-[#93032E]/20 bg-[#161616]">
+            <div className="w-10 h-10 rounded-lg bg-[#121212] border border-[#93032E]/40 flex items-center justify-center shadow-xs mb-3">
               {getModuleIcon(module.iconName)}
             </div>
 
-            <h2 className="font-heading text-lg font-bold text-white tracking-wide group-hover:text-white">
+            <h2 className="font-heading text-lg font-bold text-[#93032E] tracking-wide">
               {module.title}
             </h2>
             <p className="text-xs text-gray-300 mt-1 line-clamp-2 leading-relaxed">
@@ -191,27 +191,29 @@ export default function ModuleDirectory() {
                 <li key={sub.href}>
                   <Link
                     href={sub.href}
-                    className="group/link flex items-center justify-between px-3 py-2 rounded-lg text-sm text-gray-200 hover:text-white hover:bg-white/10 transition-colors"
+                    className="group/link flex items-center justify-between px-3 py-2 rounded-lg text-sm text-white hover:bg-white/10 transition-colors"
                   >
                     <div className="flex items-center gap-2.5 min-w-0">
-                      <span className="text-[#C4D64D] font-bold text-xs group-hover/link:translate-x-0.5 transition-transform">
+                      <span className="text-[#93032E] font-bold text-xs group-hover/link:translate-x-0.5 transition-transform">
                         ›
                       </span>
-                      <span className="truncate">{sub.name}</span>
+                      <span className="truncate text-white group-hover/link:text-white">
+                        {sub.name}
+                      </span>
                     </div>
 
-                    <ChevronRight className="w-3.5 h-3.5 text-gray-400 group-hover/link:text-white group-hover/link:translate-x-0.5 transition-all opacity-0 group-hover/link:opacity-100" />
+                    <ChevronRight className="w-3.5 h-3.5 text-[#93032E] group-hover/link:translate-x-0.5 transition-all opacity-0 group-hover/link:opacity-100" />
                   </Link>
                 </li>
               ))}
             </ul>
 
             {/* Card footer link */}
-            <div className="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-xs text-gray-400">
+            <div className="mt-4 pt-3 border-t border-[#93032E]/20 flex items-center justify-between text-xs text-gray-400">
               <span>Enter {module.title}</span>
               <Link
                 href={module.subModules[0]?.href || "#"}
-                className="inline-flex items-center gap-1 text-[#C4D64D] hover:underline font-semibold"
+                className="inline-flex items-center gap-1 text-[#93032E] hover:underline font-semibold"
               >
                 Open <ArrowUpRight className="w-3 h-3" />
               </Link>
@@ -220,22 +222,22 @@ export default function ModuleDirectory() {
         </div>
       ))}
 
-      {/* 8th Card: Enterprise System Health & Quick Telemetry to complete and balance the 3-column grid cleanly */}
-      <div className="bg-gradient-to-br from-[#3D4249] to-[#34383F] border border-white/10 rounded-xl shadow-lg p-5 flex flex-col justify-between overflow-hidden relative">
-        <div className="h-1.5 bg-gradient-to-r from-emerald-400 to-[#C4D64D] absolute top-0 left-0 right-0" />
+      {/* 8th Card: Enterprise System Health & Quick Telemetry */}
+      <div className="bg-[#1a1a1a] border border-[#93032E]/30 rounded-xl shadow-lg p-5 flex flex-col justify-between overflow-hidden relative">
+        <div className="h-1.5 bg-[#93032E] absolute top-0 left-0 right-0" />
         
         <div>
           <div className="flex items-center justify-between mb-3 mt-1">
-            <div className="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center">
-              <Activity className="w-5 h-5 text-emerald-400" />
+            <div className="w-10 h-10 rounded-lg bg-[#141414] border border-[#93032E]/40 flex items-center justify-center">
+              <Activity className="w-5 h-5 text-[#93032E]" />
             </div>
-            <span className="flex items-center gap-1 text-[11px] font-medium text-emerald-400 bg-emerald-950/60 border border-emerald-500/30 px-2.5 py-0.5 rounded-full">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+            <span className="flex items-center gap-1.5 text-[11px] font-medium text-white bg-[#121212] border border-[#93032E]/30 px-2.5 py-0.5 rounded-full">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#93032E] animate-pulse" />
               Operational
             </span>
           </div>
 
-          <h3 className="font-heading text-base font-bold text-white tracking-wide">
+          <h3 className="font-heading text-base font-bold text-[#93032E] tracking-wide">
             Enterprise System Telemetry
           </h3>
           <p className="text-xs text-gray-300 mt-1 leading-relaxed">
@@ -243,30 +245,30 @@ export default function ModuleDirectory() {
           </p>
 
           <div className="mt-4 space-y-2.5">
-            <div className="flex items-center justify-between p-2.5 rounded-lg bg-black/20 border border-white/5 text-xs">
-              <span className="text-gray-300 flex items-center gap-2">
-                <Database className="w-3.5 h-3.5 text-blue-400" /> PostgreSQL Node
+            <div className="flex items-center justify-between p-2.5 rounded-lg bg-[#141414] border border-[#93032E]/20 text-xs">
+              <span className="text-gray-200 flex items-center gap-2">
+                <Database className="w-3.5 h-3.5 text-[#93032E]" /> PostgreSQL Node
               </span>
-              <span className="text-emerald-400 font-medium">99.99% Online</span>
+              <span className="text-white font-medium">99.99% Online</span>
             </div>
-            <div className="flex items-center justify-between p-2.5 rounded-lg bg-black/20 border border-white/5 text-xs">
-              <span className="text-gray-300 flex items-center gap-2">
-                <ShieldCheck className="w-3.5 h-3.5 text-[#C4D64D]" /> Clerk RBAC
+            <div className="flex items-center justify-between p-2.5 rounded-lg bg-[#141414] border border-[#93032E]/20 text-xs">
+              <span className="text-gray-200 flex items-center gap-2">
+                <ShieldCheck className="w-3.5 h-3.5 text-[#93032E]" /> Clerk RBAC
               </span>
               <span className="text-white font-medium">Enforced</span>
             </div>
-            <div className="flex items-center justify-between p-2.5 rounded-lg bg-black/20 border border-white/5 text-xs">
-              <span className="text-gray-300 flex items-center gap-2">
-                <BarChart3 className="w-3.5 h-3.5 text-amber-400" /> Sync Latency
+            <div className="flex items-center justify-between p-2.5 rounded-lg bg-[#141414] border border-[#93032E]/20 text-xs">
+              <span className="text-gray-200 flex items-center gap-2">
+                <BarChart3 className="w-3.5 h-3.5 text-[#93032E]" /> Sync Latency
               </span>
               <span className="text-white font-medium">18 ms</span>
             </div>
           </div>
         </div>
 
-        <div className="mt-5 pt-3 border-t border-white/10 flex items-center justify-between text-xs text-gray-400">
+        <div className="mt-5 pt-3 border-t border-[#93032E]/20 flex items-center justify-between text-xs text-gray-400">
           <span>SyncERP Cloud Infrastructure</span>
-          <span className="text-[#C4D64D] font-mono font-medium">v2.5.0-prod</span>
+          <span className="text-[#93032E] font-mono font-medium">v2.5.0-prod</span>
         </div>
       </div>
     </div>

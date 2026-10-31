@@ -20,7 +20,7 @@ export function SignUpButton({
         type="button"
         className={
           className ??
-          "bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-medium text-xs sm:text-sm px-3.5 py-1.5 rounded-lg transition-all shadow-xs hover:shadow-sm cursor-pointer inline-flex items-center gap-1.5"
+          "bg-[#93032E] hover:bg-[#a60334] active:bg-[#780225] text-white font-medium text-xs sm:text-sm px-3.5 py-1.5 rounded-lg transition-all shadow-xs hover:shadow-sm cursor-pointer inline-flex items-center gap-1.5"
         }
       >
         {showIcon && <UserPlus className="w-3.5 h-3.5" />}
@@ -29,4 +29,3 @@ export function SignUpButton({
     </ClerkSignUpButton>
   );
 }
-

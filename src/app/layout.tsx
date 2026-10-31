@@ -30,7 +30,7 @@ export default function RootLayout({
       lang="en"
       className={`${prodigy.variable} ${spaceGrotesk.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-[#575B61]">
+      <body className="min-h-full flex flex-col bg-[#151515] text-white">
         <AuthProvider>
           {children}
         </AuthProvider>
