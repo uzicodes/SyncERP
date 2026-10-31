@@ -139,3 +139,14 @@ h1, h2, h3, h4, h5, h6,
 [data-heading] {
   font-family: var(--font-prodigy), sans-serif !important;
 }
+
+/* Hide Clerk development mode banner / badge */
+.cl-internal-development-mode-badge,
+.cl-devModeBadge,
+.cl-developmentModeBadge,
+[class*="development-badge"],
+[class*="devModeBadge"],
+[data-localization-key="badge__developmentMode"],
+.cl-internal-b3fm6y {
+  display: none !important;
+}

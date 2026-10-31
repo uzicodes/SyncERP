@@ -1,7 +1,6 @@
 import Link from "next/link";
-import { Suspense } from "react";
-import { UserButton, SignInButton, Show } from "@clerk/nextjs";
 import { Home, Mail, Folder, ShieldCheck } from "lucide-react";
+import { AuthControls } from "@/components/auth";
 
 export default function Header() {
   return (
@@ -58,30 +57,7 @@ export default function Header() {
             <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
           </div>
 
-          <div className="flex items-center">
-            <Suspense
-              fallback={
-                <div className="w-8 h-8 rounded-full bg-slate-200 animate-pulse" />
-              }
-            >
-              <Show when="signed-in">
-                <UserButton
-                  appearance={{
-                    elements: {
-                      avatarBox: "w-8 h-8 ring-2 ring-blue-600/20",
-                    },
-                  }}
-                />
-              </Show>
-              <Show when="signed-out">
-                <SignInButton mode="modal">
-                  <button className="bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-medium text-xs sm:text-sm px-4 py-2 rounded-lg transition-all shadow-xs hover:shadow-sm cursor-pointer">
-                    Sign In
-                  </button>
-                </SignInButton>
-              </Show>
-            </Suspense>
-          </div>
+          <AuthControls />
         </div>
       </div>
     </header>

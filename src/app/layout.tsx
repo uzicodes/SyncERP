@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
-import { ClerkProvider } from '@clerk/nextjs'
 import localFont from 'next/font/local'
+import { AuthProvider } from '@/components/auth'
 import './globals.css'
 
 const prodigy = localFont({
@@ -31,9 +31,9 @@ export default function RootLayout({
       className={`${prodigy.variable} ${spaceGrotesk.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-[#575B61]">
-        <ClerkProvider>
+        <AuthProvider>
           {children}
-        </ClerkProvider>
+        </AuthProvider>
       </body>
     </html>
   )
