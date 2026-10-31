@@ -49,12 +49,8 @@ export default function Home() {
         {/* Hero & Identity Banner */}
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 pb-6 border-b border-white/10 mb-8">
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/20 border border-white/10 text-xs font-medium text-[#C4D64D] mb-3">
-              <Sparkles className="w-3.5 h-3.5" />
-              <span>SyncERP Multi-Entity Enterprise Portal</span>
-            </div>
             
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight">
+            <h1 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight">
               Select the Module You Want to Work with Now!
             </h1>
             

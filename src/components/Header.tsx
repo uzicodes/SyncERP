@@ -16,7 +16,7 @@ export default function Header() {
             <div className="w-8 h-8 rounded-lg bg-blue-700 flex items-center justify-center text-white font-bold text-sm shadow-xs group-hover:bg-blue-800 transition-colors">
               S
             </div>
-            <span className="font-extrabold text-xl tracking-tight text-slate-900">
+            <span className="font-heading font-extrabold text-xl tracking-tight text-slate-900">
               SyncERP<span className="text-orange-500 font-black">+</span>
             </span>
           </Link>

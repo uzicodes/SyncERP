@@ -1,16 +1,18 @@
 import type { Metadata } from 'next'
 import { ClerkProvider } from '@clerk/nextjs'
-import { Geist, Geist_Mono } from 'next/font/google'
+import localFont from 'next/font/local'
 import './globals.css'
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
+const prodigy = localFont({
+  src: '../../public/fonts/ProdigySans.woff2',
+  variable: '--font-prodigy',
+  display: 'swap',
 })
 
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
+const spaceGrotesk = localFont({
+  src: '../../public/fonts/SpaceGrotesk.woff2',
+  variable: '--font-space-grotesk',
+  display: 'swap',
 })
 
 export const metadata: Metadata = {
@@ -26,7 +28,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${prodigy.variable} ${spaceGrotesk.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-[#575B61]">
         <ClerkProvider>
