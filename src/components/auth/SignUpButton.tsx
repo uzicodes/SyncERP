@@ -1,3 +1,5 @@
+"use client";
+
 import { SignUpButton as ClerkSignUpButton } from "@clerk/nextjs";
 import { UserPlus } from "lucide-react";
 

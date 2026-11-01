@@ -29,8 +29,12 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${prodigy.variable} ${spaceGrotesk.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col bg-[#151515] text-white">
+      <body
+        className="min-h-full flex flex-col bg-[#151515] text-white"
+        suppressHydrationWarning
+      >
         <AuthProvider>
           {children}
         </AuthProvider>

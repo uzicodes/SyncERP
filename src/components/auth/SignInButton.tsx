@@ -1,3 +1,5 @@
+"use client";
+
 import { SignInButton as ClerkSignInButton } from "@clerk/nextjs";
 import { LogIn } from "lucide-react";
 
