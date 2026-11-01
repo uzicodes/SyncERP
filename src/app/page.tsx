@@ -10,6 +10,7 @@ import {
   TrendingUp,
   Boxes,
   Lock,
+  BookOpen,
 } from "lucide-react";
 
 async function AuthRedirect() {
@@ -47,22 +48,20 @@ export default function HomePage() {
           </div>
 
           <div className="flex items-center gap-3">
-            <SignInButton mode="modal">
-              <button
-                type="button"
-                className="px-4 py-2 text-sm font-medium text-white hover:text-white/80 transition-colors cursor-pointer"
-              >
-                Sign In
-              </button>
-            </SignInButton>
-            <SignUpButton mode="modal">
-              <button
-                type="button"
-                className="px-4 py-2 text-sm font-semibold rounded-lg bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white shadow-sm transition-all cursor-pointer"
-              >
-                Get Started
-              </button>
-            </SignUpButton>
+            <a
+              href="#features"
+              className="px-4 py-2 text-sm font-medium text-white hover:text-white/80 hover:bg-white/10 rounded-lg transition-all cursor-pointer inline-flex items-center gap-1.5"
+            >
+              <Layers className="w-4 h-4 text-blue-300" />
+              <span>Explore Modules</span>
+            </a>
+            <a
+              href="#documentation"
+              className="px-4 py-2 text-sm font-semibold rounded-lg bg-white/15 hover:bg-white/25 border border-white/20 text-white shadow-sm transition-all cursor-pointer inline-flex items-center gap-1.5"
+            >
+              <BookOpen className="w-4 h-4 text-rose-300" />
+              <span>Documentation</span>
+            </a>
           </div>
         </div>
       </nav>
@@ -70,17 +69,34 @@ export default function HomePage() {
       {/* Main Content Area */}
       <main className="flex-1 flex flex-col relative z-10">
         {/* Hero Section */}
-        <section className="text-white py-20 sm:py-28 lg:py-32 px-4 sm:px-6 lg:px-8 relative">
+        <section className="text-white pt-8 sm:pt-12 lg:pt-14 pb-16 sm:pb-20 px-4 sm:px-6 lg:px-8 relative">
           <div className="max-w-4xl mx-auto text-center">
             {/* Top Badge */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/15 border border-white/20 text-xs sm:text-sm font-medium tracking-wide mb-8 backdrop-blur-xs">
-              <Cpu className="w-4 h-4 text-blue-300" />
-              <span>Next-Gen Enterprise Automation Platform</span>
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/15 border border-white/20 text-xs sm:text-sm font-medium tracking-wide mb-5 backdrop-blur-xs text-white">
+              <Cpu className="w-4 h-4 text-white" />
+              <span className="text-white">Enterprise Automation Platform</span>
             </div>
 
-            {/* Bold Headline with Solid Underneath Layer Style (Crimson Red & White) */}
-            <h1 className="font-heading text-3xl sm:text-5xl lg:text-6xl font-extrabold not-italic tracking-tight leading-[1.2] pb-2 underlayer-text">
-              Automate Your Entire Enterprise Operations with Intelligent Precision
+            {/* Bold Headline with Solid White Text and Crimson Red 3D Extrusion */}
+            <h1
+              className="font-heading text-3xl sm:text-5xl lg:text-6xl font-black not-italic tracking-tight leading-[1.3] pb-4 text-white retro-3d-block"
+              style={{
+                color: "#ffffff",
+                textDecoration: "none",
+                textShadow:
+                  "1px 1px 0 #93032E, 2px 2px 0 #93032E, 3px 3px 0 #93032E, 4px 4px 0 #93032E, 5px 5px 0 #93032E, 6px 6px 0 #750225, 7px 7px 0 #57011b",
+              }}
+            >
+              <span
+                className="text-white"
+                style={{
+                  color: "#ffffff",
+                  textShadow:
+                    "1px 1px 0 #93032E, 2px 2px 0 #93032E, 3px 3px 0 #93032E, 4px 4px 0 #93032E, 5px 5px 0 #93032E, 6px 6px 0 #750225, 7px 7px 0 #57011b",
+                }}
+              >
+                Automate Your Entire Enterprise Operations with Intelligent Precision
+              </span>
             </h1>
 
             {/* Subheadline */}
@@ -135,12 +151,22 @@ export default function HomePage() {
         </section>
 
         {/* Feature Highlights Section */}
-        <section className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="font-heading text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
-              Built for Modern Scale, Security, and Agility
-            </h2>
-            <p className="mt-3 text-slate-200 text-base">
+        <section id="features" className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full scroll-mt-20">
+          <div className="text-center max-w-4xl mx-auto mb-16 px-2">
+            <div className="inline-flex flex-col items-center max-w-full">
+              <h2
+                className="bg-[#93032E] text-white px-3 sm:px-5 py-1 sm:py-1.5 font-heading text-lg sm:text-2xl md:text-3xl font-extrabold not-italic whitespace-nowrap tracking-tight shadow-sm crimson-banner"
+                style={{
+                  color: "#ffffff",
+                  backgroundColor: "#93032E",
+                  textShadow: "none",
+                }}
+              >
+                Built for Modern Scale, Security, and Agility
+              </h2>
+              <div className="w-full h-[2.5px] bg-white mt-[3px]" />
+            </div>
+            <p className="mt-4 text-slate-200 text-base max-w-2xl mx-auto">
               Say goodbye to fragmented silos. SyncERP connects every department into a single source of truth.
             </p>
           </div>

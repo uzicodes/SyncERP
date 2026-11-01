@@ -108,12 +108,94 @@ html, body, p, span, a, button, input, label, select, textarea, li, div {
   font-family: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
 }
 
-/* Enforce Prodigy and Red #93032E for all headings across the entire application */
-h1, h2, h3, h4, h5, h6,
-.font-heading,
-[data-heading] {
+/* Enforce Prodigy and Red #93032E for general headings, exempting custom styled elements */
+h1:not(.retro-3d-block):not(.underlayer-text):not(.crimson-underline):not(.crimson-banner):not(.text-white):not([class*="text-white"]),
+h2:not(.retro-3d-block):not(.underlayer-text):not(.crimson-underline):not(.crimson-banner):not(.text-white):not([class*="text-white"]),
+h3:not(.retro-3d-block):not(.underlayer-text):not(.crimson-underline):not(.crimson-banner):not(.text-white):not([class*="text-white"]),
+h4, h5, h6,
+.font-heading:not(.retro-3d-block):not(.underlayer-text):not(.crimson-underline):not(.crimson-banner):not(.text-white):not([class*="text-white"]),
+[data-heading]:not(.retro-3d-block):not(.underlayer-text):not(.crimson-underline):not(.crimson-banner):not(.text-white):not([class*="text-white"]) {
   font-family: var(--font-prodigy), sans-serif !important;
   color: #93032E !important;
+}
+
+.crimson-banner {
+  color: #ffffff !important;
+  background-color: #93032E !important;
+}
+
+.crimson-underline {
+  color: #ffffff !important;
+  text-decoration: underline !important;
+  text-decoration-color: #93032E !important;
+  text-decoration-thickness: 4px !important;
+  text-underline-offset: 8px !important;
+  text-shadow: none !important;
+}
+
+/* Reusable Retro Blocky 3D Extrusion Typography (Crimson Red & White) */
+.retro-3d-block,
+h1.retro-3d-block,
+h2.retro-3d-block,
+h3.retro-3d-block {
+  color: #ffffff !important;
+  font-family: var(--font-prodigy), sans-serif !important;
+  font-weight: 900 !important;
+  font-style: normal !important;
+  letter-spacing: -0.01em;
+  text-decoration: none !important;
+  /* Dense, unblurred (0px blur) 3D extrusion pointing down and to the right */
+  text-shadow:
+    1px 1px 0 #93032E,
+    2px 2px 0 #93032E,
+    3px 3px 0 #93032E,
+    4px 4px 0 #93032E,
+    5px 5px 0 #93032E,
+    6px 6px 0 #93032E,
+    7px 7px 0 #93032E,
+    8px 8px 0 #750225,
+    9px 9px 0 #57011b !important;
+}
+
+/* Variant without the top line: Pure dense 3D extrusion down and right */
+.retro-3d-block-clean {
+  color: #ffffff !important;
+  font-family: var(--font-prodigy), sans-serif !important;
+  font-weight: 900;
+  font-style: normal !important;
+  letter-spacing: -0.01em;
+  text-shadow:
+    1px 1px 0 #93032E,
+    2px 2px 0 #93032E,
+    3px 3px 0 #93032E,
+    4px 4px 0 #93032E,
+    5px 5px 0 #93032E,
+    6px 6px 0 #93032E,
+    7px 7px 0 #93032E,
+    8px 8px 0 #750225,
+    9px 9px 0 #57011b;
+}
+
+/* Variant with Crimson Red face and White 3D extrusion */
+.retro-3d-block-red {
+  color: #93032E !important;
+  font-family: var(--font-prodigy), sans-serif !important;
+  font-weight: 900;
+  font-style: normal !important;
+  letter-spacing: -0.01em;
+  text-decoration: overline;
+  text-decoration-thickness: 5px;
+  text-decoration-color: #93032E;
+  text-shadow:
+    1px 1px 0 #ffffff,
+    2px 2px 0 #ffffff,
+    3px 3px 0 #ffffff,
+    4px 4px 0 #ffffff,
+    5px 5px 0 #ffffff,
+    6px 6px 0 #ffffff,
+    7px 7px 0 #ffffff,
+    8px 8px 0 #e2e8f0,
+    9px 9px 0 #cbd5e1;
 }
 
 /* Layered Typography: Clean upright font with a solid underneath color layer (Crimson Red & White) */
