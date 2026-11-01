@@ -1,6 +1,9 @@
+"use client";
+
+import { Suspense } from "react";
 import Link from "next/link";
-import { Home, Mail, Folder, ShieldCheck } from "lucide-react";
-import { AuthControls } from "@/components/auth";
+import { Home, Mail, Folder } from "lucide-react";
+import { Show, UserButton } from "@clerk/nextjs";
 
 export default function Header() {
   return (
@@ -9,7 +12,7 @@ export default function Header() {
         {/* Left: Brand logo & quick action icons */}
         <div className="flex items-center gap-6">
           <Link
-            href="/"
+            href="/dashboard"
             className="flex items-center gap-2.5 group transition-transform active:scale-98"
           >
             <div className="w-8 h-8 rounded-lg bg-[#93032E] flex items-center justify-center text-white font-bold text-sm shadow-xs group-hover:opacity-90 transition-opacity">
@@ -22,14 +25,14 @@ export default function Header() {
 
           {/* Quick Action Navigation Buttons */}
           <div className="hidden sm:flex items-center gap-1.5 pl-3 border-l border-[#93032E]/25">
-            <button
-              type="button"
+            <Link
+              href="/dashboard"
               title="Home Dashboard"
               aria-label="Home"
               className="w-8 h-8 flex items-center justify-center rounded-md text-white bg-[#1a1a1a] border border-[#93032E]/30 hover:bg-[#93032E]/20 transition-colors cursor-pointer"
             >
               <Home className="w-4 h-4" />
-            </button>
+            </Link>
             <button
               type="button"
               title="Messages & Notifications"
@@ -49,15 +52,21 @@ export default function Header() {
           </div>
         </div>
 
-        {/* Right: Environment status & Authentication controls */}
+        {/* Right: Authenticated User Controls */}
         <div className="flex items-center gap-4">
-          <div className="hidden md:flex items-center gap-2 px-2.5 py-1 rounded-full bg-[#1a1a1a] border border-[#93032E]/30 text-xs font-medium text-white">
-            <ShieldCheck className="w-3.5 h-3.5 text-[#93032E]" />
-            <span>Enterprise Suite</span>
-            <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#93032E] animate-pulse" />
-          </div>
-
-          <AuthControls />
+          <Suspense fallback={<div className="w-8 h-8 rounded-full bg-neutral-800 animate-pulse" />}>
+            <Show when="signed-in">
+              <UserButton
+                userProfileMode="navigation"
+                userProfileUrl="/profile"
+                appearance={{
+                  elements: {
+                    avatarBox: "w-8 h-8 ring-2 ring-[#93032E]/40 hover:ring-[#93032E] transition-all",
+                  },
+                }}
+              />
+            </Show>
+          </Suspense>
         </div>
       </div>
     </header>

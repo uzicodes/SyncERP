@@ -1,14 +1,11 @@
 import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server';
-import { NextResponse } from 'next/server';
 
-const isProtectedRoute = createRouteMatcher(['/profile(.*)']);
+// Root route '/' is explicitly public. All other routes (/dashboard, /profile, modules, etc.) require authentication.
+const isPublicRoute = createRouteMatcher(['/']);
 
 export default clerkMiddleware(async (auth, req) => {
-  if (isProtectedRoute(req)) {
-    const { userId } = await auth();
-    if (!userId) {
-      return NextResponse.redirect(new URL('/', req.url));
-    }
+  if (!isPublicRoute(req)) {
+    await auth.protect();
   }
 });
 

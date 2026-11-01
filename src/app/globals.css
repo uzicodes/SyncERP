@@ -116,6 +116,27 @@ h1, h2, h3, h4, h5, h6,
   color: #93032E !important;
 }
 
+/* Layered Typography: Clean upright font with a solid underneath color layer (Crimson Red & White) */
+.underlayer-text {
+  color: #ffffff !important;
+  font-style: normal !important;
+  text-shadow:
+    1px 2px 0 #93032E,
+    2px 3px 0 #93032E,
+    2px 4px 0 #93032E,
+    3px 4px 0 #93032E;
+}
+
+.underlayer-text-red {
+  color: #93032E !important;
+  font-style: normal !important;
+  text-shadow:
+    1px 2px 0 #ffffff,
+    2px 3px 0 #ffffff,
+    2px 4px 0 #ffffff,
+    3px 4px 0 #ffffff;
+}
+
 /* Hide Clerk development mode banner / badge */
 .cl-internal-development-mode-badge,
 .cl-devModeBadge,
