@@ -1,7 +1,9 @@
 import { Suspense } from "react";
+import Image from "next/image";
 import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 import { SignInButton, SignUpButton } from "@clerk/nextjs";
+import ModulesDropdown from "@/components/ModulesDropdown";
 import {
   ShieldCheck,
   Cpu,
@@ -39,22 +41,24 @@ export default function HomePage() {
       <nav className="w-full border-b border-white/15 bg-[#575B61]/80 backdrop-blur-md sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-lg bg-[#93032E] flex items-center justify-center text-white font-bold text-base shadow-sm">
-              S
-            </div>
-            <span className="font-heading font-extrabold text-2xl tracking-tight text-white">
+            <Image
+              src="/Sync-ERP(transparent).webp"
+              alt="SyncERP Logo"
+              width={48}
+              height={48}
+              className="w-11 h-11 sm:w-12 sm:h-12 object-contain drop-shadow-sm"
+              priority
+            />
+            <span
+              className="font-brand font-bold text-2xl tracking-wider text-white select-none"
+              style={{ fontFamily: "'Mazegin', var(--font-mazegin), sans-serif" }}
+            >
               SyncERP<span className="text-[#93032E] font-black">+</span>
             </span>
           </div>
 
           <div className="flex items-center gap-3">
-            <a
-              href="#features"
-              className="px-4 py-2 text-sm font-medium text-white hover:text-white/80 hover:bg-white/10 rounded-lg transition-all cursor-pointer inline-flex items-center gap-1.5"
-            >
-              <Layers className="w-4 h-4 text-blue-300" />
-              <span>Explore Modules</span>
-            </a>
+            <ModulesDropdown />
             <a
               href="#documentation"
               className="px-4 py-2 text-sm font-semibold rounded-lg bg-white/15 hover:bg-white/25 border border-white/20 text-white shadow-sm transition-all cursor-pointer inline-flex items-center gap-1.5"
@@ -155,7 +159,7 @@ export default function HomePage() {
           <div className="text-center max-w-4xl mx-auto mb-16 px-2">
             <div className="inline-flex flex-col items-center max-w-full">
               <h2
-                className="bg-[#93032E] text-white px-3 sm:px-5 py-1 sm:py-1.5 font-heading text-lg sm:text-2xl md:text-3xl font-extrabold not-italic whitespace-nowrap tracking-tight shadow-sm crimson-banner"
+                className="bg-[#93032E] text-white px-1.5 py-0.5 sm:px-2 sm:py-1 font-heading text-lg sm:text-2xl md:text-[28px] font-bold not-italic whitespace-nowrap tracking-tight crimson-banner rounded-none"
                 style={{
                   color: "#ffffff",
                   backgroundColor: "#93032E",
@@ -164,7 +168,7 @@ export default function HomePage() {
               >
                 Built for Modern Scale, Security, and Agility
               </h2>
-              <div className="w-full h-[2.5px] bg-white mt-[3px]" />
+              <div className="w-full h-[3px] bg-white mt-[2.5px]" />
             </div>
             <p className="mt-4 text-slate-200 text-base max-w-2xl mx-auto">
               Say goodbye to fragmented silos. SyncERP connects every department into a single source of truth.
@@ -214,7 +218,16 @@ export default function HomePage() {
       {/* Landing Footer */}
       <footer className="border-t border-white/15 bg-black/20 backdrop-blur-xs py-8 text-center text-xs text-slate-200 relative z-10">
         <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p>© 2026 SyncERP Global Enterprise Solutions. All rights reserved.</p>
+          <div className="flex items-center gap-2.5">
+            <Image
+              src="/Sync-ERP(transparent).webp"
+              alt="SyncERP Logo"
+              width={20}
+              height={20}
+              className="w-5 h-5 object-contain"
+            />
+            <p>© 2026 <span className="font-brand font-medium">SyncERP</span> Global Enterprise Solutions. All rights reserved.</p>
+          </div>
           <div className="flex items-center gap-6 text-slate-200">
             <span className="hover:text-white cursor-pointer">Security Compliance</span>
             <span>•</span>

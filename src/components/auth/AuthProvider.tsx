@@ -16,6 +16,9 @@ export const authLocalization = {
 };
 
 export const authAppearance = {
+  layout: {
+    logoImageUrl: "/Sync-ERP(transparent).webp",
+  },
   options: {
     unsafe_disableDevelopmentModeWarnings: true,
   },

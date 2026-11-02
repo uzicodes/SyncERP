@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
   Layers,
   Landmark,
@@ -267,7 +268,16 @@ export default function ModuleDirectory() {
         </div>
 
         <div className="mt-5 pt-3 border-t border-[#93032E]/20 flex items-center justify-between text-xs text-gray-400">
-          <span>SyncERP Cloud Infrastructure</span>
+          <span className="inline-flex items-center gap-1.5">
+            <Image
+              src="/Sync-ERP(transparent).webp"
+              alt="SyncERP Logo"
+              width={16}
+              height={16}
+              className="w-4 h-4 object-contain"
+            />
+            <span><span className="font-brand font-medium text-white">SyncERP</span> Cloud Infrastructure</span>
+          </span>
           <span className="text-[#93032E] font-mono font-medium">v2.5.0-prod</span>
         </div>
       </div>

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Header from "@/components/Header";
 import ModuleDirectory from "@/components/ModuleDirectory";
 
@@ -27,7 +28,16 @@ export default function DashboardPage() {
       {/* Modern ERP Footer */}
       <footer className="border-t border-[#93032E]/20 bg-[#121212] py-6 mt-12 text-center text-xs text-gray-400">
         <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p>© 2026 SyncERP Global Enterprise Solutions. All rights reserved.</p>
+          <div className="flex items-center gap-2">
+            <Image
+              src="/Sync-ERP(transparent).webp"
+              alt="SyncERP Logo"
+              width={18}
+              height={18}
+              className="w-4 h-4 object-contain"
+            />
+            <p>© 2026 <span className="font-brand font-medium">SyncERP</span> Global Enterprise Solutions. All rights reserved.</p>
+          </div>
           <div className="flex items-center gap-4 text-gray-400">
             <span className="hover:text-white cursor-pointer">Security Compliance</span>
             <span>•</span>

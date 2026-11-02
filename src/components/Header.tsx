@@ -2,6 +2,7 @@
 
 import { Suspense } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Home, Mail, Folder } from "lucide-react";
 import { Show, UserButton } from "@clerk/nextjs";
 
@@ -15,11 +16,19 @@ export default function Header() {
             href="/dashboard"
             className="flex items-center gap-2.5 group transition-transform active:scale-98"
           >
-            <div className="w-8 h-8 rounded-lg bg-[#93032E] flex items-center justify-center text-white font-bold text-sm shadow-xs group-hover:opacity-90 transition-opacity">
-              S
-            </div>
-            <span className="font-heading font-extrabold text-xl tracking-tight text-[#93032E]">
-              SyncERP<span className="text-[#93032E] font-black">+</span>
+            <Image
+              src="/Sync-ERP(transparent).webp"
+              alt="SyncERP Logo"
+              width={48}
+              height={48}
+              className="w-11 h-11 sm:w-12 sm:h-12 object-contain group-hover:opacity-90 transition-opacity drop-shadow-xs"
+              priority
+            />
+            <span
+              className="font-brand font-bold text-xl sm:text-2xl tracking-wider text-white select-none"
+              style={{ fontFamily: "'Mazegin', var(--font-mazegin), sans-serif" }}
+            >
+              SYNC-ERP
             </span>
           </Link>
 

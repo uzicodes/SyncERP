@@ -15,9 +15,20 @@ const spaceGrotesk = localFont({
   display: 'swap',
 })
 
+const mazegin = localFont({
+  src: '../../public/fonts/MAZEGIN.woff2',
+  variable: '--font-mazegin',
+  weight: '100 900',
+  display: 'swap',
+})
+
 export const metadata: Metadata = {
   title: 'SyncERP - Enterprise Resource Planning',
   description: 'Enterprise ERP System',
+  icons: {
+    icon: '/Sync-ERP(transparent).webp',
+    apple: '/Sync-ERP(transparent).webp',
+  },
 }
 
 export default function RootLayout({
@@ -28,7 +39,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${prodigy.variable} ${spaceGrotesk.variable} h-full antialiased`}
+      className={`${prodigy.variable} ${spaceGrotesk.variable} ${mazegin.variable} h-full antialiased`}
       suppressHydrationWarning
     >
       <body
