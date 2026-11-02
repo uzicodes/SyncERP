@@ -72,36 +72,36 @@ const INITIAL_USERS: ManagedUser[] = [
 
 export default function UserManagementPage() {
   return (
-    <div className="min-h-screen bg-slate-100 text-slate-900 flex flex-col font-sans">
+    <div className="min-h-screen bg-slate-100 text-slate-900 dark:bg-[#151515] dark:text-white flex flex-col font-sans transition-colors duration-150">
       {/* Top Application Navigation Header */}
       <Header />
 
       {/* Breadcrumb Navigation Bar */}
-      <div className="bg-white border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between text-xs text-slate-500">
+      <div className="bg-white border-b border-slate-200 dark:bg-[#181818] dark:border-white/10 transition-colors duration-150">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between text-xs text-slate-500 dark:text-gray-400">
           <div className="flex items-center gap-2">
             <Link
               href="/dashboard"
-              className="hover:text-[#93032E] transition-colors"
+              className="hover:text-[#93032E] dark:hover:text-[#ff4d79] transition-colors"
             >
               Dashboard
             </Link>
-            <span>/</span>
-            <span className="text-slate-700 font-medium">Commons</span>
-            <span>/</span>
-            <span className="text-[#93032E] font-semibold">User Management</span>
+            <span className="text-slate-400 dark:text-gray-600">/</span>
+            <span className="text-slate-700 dark:text-gray-300 font-medium">Commons</span>
+            <span className="text-slate-400 dark:text-gray-600">/</span>
+            <span className="text-[#93032E] dark:text-[#ff4d79] font-semibold">User Management</span>
           </div>
 
-          <div className="flex items-center gap-2 text-slate-400 text-xs">
+          <div className="flex items-center gap-2 text-slate-400 dark:text-gray-500 text-xs">
             <span>Module:</span>
-            <span className="px-2 py-0.5 rounded bg-slate-100 text-slate-700 font-mono text-[11px] border border-slate-200">
+            <span className="px-2 py-0.5 rounded bg-slate-100 dark:bg-[#202020] text-slate-700 dark:text-gray-300 font-mono text-[11px] border border-slate-200 dark:border-white/10">
               COMMONS-v1.0
             </span>
           </div>
         </div>
       </div>
 
-      {/* Main Content Area (Clean Enterprise Style with White Background) */}
+      {/* Main Content Area (Clean Enterprise Style with Responsive Theme Background) */}
       <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
         <UserManagementView initialUsers={INITIAL_USERS} />
       </main>

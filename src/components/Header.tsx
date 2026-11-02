@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Home, Mail, Folder } from "lucide-react";
 import { Show, UserButton } from "@clerk/nextjs";
+import ThemeToggle from "@/components/ThemeToggle";
 
 export default function Header() {
   return (
@@ -61,8 +62,10 @@ export default function Header() {
           </div>
         </div>
 
-        {/* Right: Authenticated User Controls */}
-        <div className="flex items-center gap-4">
+        {/* Right: Theme Toggle & Authenticated User Controls */}
+        <div className="flex items-center gap-3 sm:gap-4">
+          <ThemeToggle />
+
           <Suspense fallback={<div className="w-8 h-8 rounded-full bg-neutral-800 animate-pulse" />}>
             <Show when="signed-in">
               <UserButton

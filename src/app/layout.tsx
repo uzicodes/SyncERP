@@ -49,6 +49,22 @@ export default function RootLayout({
       className={`${prodigy.variable} ${spaceGrotesk.variable} ${mazegin.variable} h-full antialiased`}
       suppressHydrationWarning
     >
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              try {
+                const t = localStorage.getItem('theme');
+                if (t === 'dark') {
+                  document.documentElement.classList.add('dark');
+                } else {
+                  document.documentElement.classList.remove('dark');
+                }
+              } catch (e) {}
+            `,
+          }}
+        />
+      </head>
       <body
         className="min-h-full flex flex-col bg-[#151515] text-white"
         suppressHydrationWarning

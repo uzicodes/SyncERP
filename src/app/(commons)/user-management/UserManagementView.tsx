@@ -196,18 +196,18 @@ export default function UserManagementView({
   });
 
   return (
-    <div className="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden flex flex-col">
+    <div className="bg-white dark:bg-[#191919] rounded-xl shadow-sm dark:shadow-xl border border-slate-200 dark:border-white/10 overflow-hidden flex flex-col transition-colors duration-150">
       {/* Toast Notification */}
       {successMessage && (
-        <div className="mx-6 sm:mx-8 mt-6 p-4 rounded-lg bg-emerald-50 border border-emerald-200 text-emerald-800 text-sm flex items-center justify-between shadow-xs animate-in fade-in slide-in-from-top-2 duration-200">
+        <div className="mx-6 sm:mx-8 mt-6 p-4 rounded-lg bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800 text-emerald-800 dark:text-emerald-200 text-sm flex items-center justify-between shadow-xs animate-in fade-in slide-in-from-top-2 duration-200">
           <div className="flex items-center gap-2.5">
-            <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0" />
+            <CheckCircle2 className="w-5 h-5 text-emerald-600 dark:text-emerald-400 shrink-0" />
             <span className="font-medium">{successMessage}</span>
           </div>
           <button
             type="button"
             onClick={() => setSuccessMessage(null)}
-            className="text-emerald-600 hover:text-emerald-900 cursor-pointer p-1 rounded"
+            className="text-emerald-600 dark:text-emerald-400 hover:text-emerald-900 dark:hover:text-emerald-200 cursor-pointer p-1 rounded"
           >
             <X className="w-4 h-4" />
           </button>
@@ -215,17 +215,17 @@ export default function UserManagementView({
       )}
 
       {/* Page Header Area */}
-      <div className="p-6 sm:p-8 border-b border-slate-200 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+      <div className="p-6 sm:p-8 border-b border-slate-200 dark:border-white/10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
           <div className="flex items-center gap-3">
-            <h1 className="font-heading text-2xl sm:text-3xl font-extrabold text-[#93032E] tracking-tight">
+            <h1 className="font-heading text-2xl sm:text-3xl font-extrabold text-[#93032E] dark:text-[#ff4d79] tracking-tight">
               User Management
             </h1>
-            <span className="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
+            <span className="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800/60">
               {users.length} Total Users
             </span>
           </div>
-          <p className="text-sm text-slate-500 mt-1">
+          <p className="text-sm text-slate-500 dark:text-gray-400 mt-1">
             Manage enterprise identity, role assignments, security permissions, and workspace access.
           </p>
         </div>
@@ -247,21 +247,21 @@ export default function UserManagementView({
       </div>
 
       {/* Search, Filter, and Controls Bar */}
-      <div className="p-4 sm:px-8 bg-slate-50/70 border-b border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <div className="p-4 sm:px-8 bg-slate-50/70 dark:bg-[#161616] border-b border-slate-200 dark:border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3">
         <div className="relative w-full sm:w-96">
-          <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
+          <Search className="w-4 h-4 text-slate-400 dark:text-gray-500 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
           <input
             type="text"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Search by name, email, or role..."
-            className="w-full pl-10 pr-4 py-2 text-sm bg-white border border-slate-300 rounded-lg text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#93032E]/30 focus:border-[#93032E]"
+            className="w-full pl-10 pr-4 py-2 text-sm bg-white dark:bg-[#121212] border border-slate-300 dark:border-white/15 rounded-lg text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-[#93032E]/30 focus:border-[#93032E]"
           />
           {searchQuery && (
             <button
               type="button"
               onClick={() => setSearchQuery("")}
-              className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600"
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 dark:text-gray-400 hover:text-slate-600 dark:hover:text-white"
             >
               <X className="w-3.5 h-3.5" />
             </button>
@@ -269,24 +269,24 @@ export default function UserManagementView({
         </div>
 
         <div className="flex items-center gap-2.5 w-full sm:w-auto justify-end">
-          <div className="flex items-center gap-1.5 bg-white border border-slate-300 rounded-lg px-2.5 py-1.5 text-xs text-slate-700">
-            <Filter className="w-3.5 h-3.5 text-slate-500" />
+          <div className="flex items-center gap-1.5 bg-white dark:bg-[#121212] border border-slate-300 dark:border-white/15 rounded-lg px-2.5 py-1.5 text-xs text-slate-700 dark:text-gray-200">
+            <Filter className="w-3.5 h-3.5 text-slate-500 dark:text-gray-400" />
             <select
               value={roleFilter}
               onChange={(e) => setRoleFilter(e.target.value)}
-              className="bg-transparent text-slate-700 font-medium focus:outline-none cursor-pointer"
+              className="bg-transparent text-slate-700 dark:text-gray-200 font-medium focus:outline-none cursor-pointer"
             >
-              <option value="all">All Roles</option>
+              <option value="all" className="bg-white dark:bg-[#191919] text-slate-900 dark:text-white">All Roles</option>
               {AVAILABLE_ROLES.map((role) => (
-                <option key={role} value={role}>
+                <option key={role} value={role} className="bg-white dark:bg-[#191919] text-slate-900 dark:text-white">
                   {role}
                 </option>
               ))}
             </select>
           </div>
 
-          <div className="hidden sm:flex items-center gap-1.5 px-3 py-2 text-xs font-medium text-slate-700 bg-white border border-slate-300 rounded-lg">
-            <ArrowUpDown className="w-3.5 h-3.5 text-slate-500" />
+          <div className="hidden sm:flex items-center gap-1.5 px-3 py-2 text-xs font-medium text-slate-700 dark:text-gray-300 bg-white dark:bg-[#121212] border border-slate-300 dark:border-white/15 rounded-lg">
+            <ArrowUpDown className="w-3.5 h-3.5 text-slate-500 dark:text-gray-400" />
             <span>Active List</span>
           </div>
         </div>
@@ -296,7 +296,7 @@ export default function UserManagementView({
       <div className="overflow-x-auto">
         <table className="w-full text-left border-collapse">
           <thead>
-            <tr className="border-b border-slate-200 bg-slate-50 text-[11px] font-semibold text-slate-600 uppercase tracking-wider">
+            <tr className="border-b border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-[#161616] text-[11px] font-semibold text-slate-600 dark:text-gray-300 uppercase tracking-wider">
               <th scope="col" className="px-6 py-3.5">
                 Name
               </th>
@@ -315,14 +315,14 @@ export default function UserManagementView({
             </tr>
           </thead>
 
-          <tbody className="divide-y divide-slate-200 bg-white text-sm">
+          <tbody className="divide-y divide-slate-200 dark:divide-white/10 bg-white dark:bg-[#191919] text-sm">
             {filteredUsers.length === 0 ? (
               <tr>
-                <td colSpan={5} className="px-6 py-12 text-center text-slate-500">
+                <td colSpan={5} className="px-6 py-12 text-center text-slate-500 dark:text-gray-400">
                   <div className="max-w-xs mx-auto flex flex-col items-center">
-                    <UserX className="w-10 h-10 text-slate-300 mb-2" />
-                    <p className="font-semibold text-slate-800">No users found</p>
-                    <p className="text-xs text-slate-400 mt-1">
+                    <UserX className="w-10 h-10 text-slate-300 dark:text-gray-600 mb-2" />
+                    <p className="font-semibold text-slate-800 dark:text-gray-200">No users found</p>
+                    <p className="text-xs text-slate-400 dark:text-gray-500 mt-1">
                       No matching records for &quot;{searchQuery}&quot;. Try adjusting your filter or click &quot;+ Add New User&quot;.
                     </p>
                   </div>
@@ -332,19 +332,19 @@ export default function UserManagementView({
               filteredUsers.map((user) => (
                 <tr
                   key={user.id}
-                  className="hover:bg-slate-50/80 transition-colors group"
+                  className="hover:bg-slate-50/80 dark:hover:bg-white/5 transition-colors group"
                 >
                   {/* Name Column */}
                   <td className="px-6 py-4 whitespace-nowrap">
                     <div className="flex items-center gap-3">
-                      <div className="w-9 h-9 rounded-full bg-[#93032E]/10 text-[#93032E] font-bold text-xs flex items-center justify-center shrink-0 border border-[#93032E]/20">
+                      <div className="w-9 h-9 rounded-full bg-[#93032E]/10 dark:bg-[#93032E]/25 text-[#93032E] dark:text-[#ff4d79] font-bold text-xs flex items-center justify-center shrink-0 border border-[#93032E]/20 dark:border-[#93032E]/40">
                         {user.avatarInitials}
                       </div>
                       <div>
-                        <div className="font-semibold text-slate-900 group-hover:text-[#93032E] transition-colors">
+                        <div className="font-semibold text-slate-900 dark:text-white group-hover:text-[#93032E] dark:group-hover:text-[#ff4d79] transition-colors">
                           {user.name}
                         </div>
-                        <div className="text-xs text-slate-400 font-mono">
+                        <div className="text-xs text-slate-400 dark:text-gray-400 font-mono">
                           ID: {user.id}
                           {user.phone ? ` • ${user.phone}` : ""}
                         </div>
@@ -354,8 +354,8 @@ export default function UserManagementView({
 
                   {/* Email Column */}
                   <td className="px-6 py-4 whitespace-nowrap">
-                    <div className="flex items-center gap-1.5 text-slate-600 font-mono text-xs">
-                      <Mail className="w-3.5 h-3.5 text-slate-400" />
+                    <div className="flex items-center gap-1.5 text-slate-600 dark:text-gray-300 font-mono text-xs">
+                      <Mail className="w-3.5 h-3.5 text-slate-400 dark:text-gray-500" />
                       <span>{user.email}</span>
                     </div>
                   </td>
@@ -365,12 +365,12 @@ export default function UserManagementView({
                     <span
                       className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-medium border ${
                         user.roleType === "admin"
-                          ? "bg-purple-50 text-purple-700 border-purple-200"
+                          ? "bg-purple-50 text-purple-700 border-purple-200 dark:bg-purple-950/40 dark:text-purple-300 dark:border-purple-800/60"
                           : user.roleType === "finance"
-                          ? "bg-emerald-50 text-emerald-700 border-emerald-200"
+                          ? "bg-emerald-50 text-emerald-700 border-emerald-200 dark:bg-emerald-950/40 dark:text-emerald-300 dark:border-emerald-800/60"
                           : user.roleType === "operations"
-                          ? "bg-blue-50 text-blue-700 border-blue-200"
-                          : "bg-slate-100 text-slate-700 border-slate-200"
+                          ? "bg-blue-50 text-blue-700 border-blue-200 dark:bg-blue-950/40 dark:text-blue-300 dark:border-blue-800/60"
+                          : "bg-slate-100 text-slate-700 border-slate-200 dark:bg-[#222222] dark:text-gray-300 dark:border-white/10"
                       }`}
                     >
                       <Shield className="w-3 h-3" />
@@ -381,17 +381,17 @@ export default function UserManagementView({
                   {/* Status Column */}
                   <td className="px-6 py-4 whitespace-nowrap">
                     {user.status === "Active" ? (
-                      <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-emerald-50 text-emerald-700 border border-emerald-200">
+                      <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-emerald-50 text-emerald-700 border border-emerald-200 dark:bg-emerald-950/40 dark:text-emerald-300 dark:border-emerald-800/60">
                         <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
                         Active
                       </span>
                     ) : user.status === "Pending" ? (
-                      <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-amber-50 text-amber-700 border border-amber-200">
+                      <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-amber-50 text-amber-700 border border-amber-200 dark:bg-amber-950/40 dark:text-amber-300 dark:border-amber-800/60">
                         <Clock className="w-3 h-3 text-amber-500" />
                         Pending
                       </span>
                     ) : (
-                      <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-slate-100 text-slate-600 border border-slate-300">
+                      <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-slate-100 text-slate-600 border border-slate-300 dark:bg-[#222222] dark:text-gray-400 dark:border-white/10">
                         <UserX className="w-3 h-3 text-slate-400" />
                         Suspended
                       </span>
@@ -404,7 +404,7 @@ export default function UserManagementView({
                       <button
                         type="button"
                         onClick={() => handleDeleteUser(user.id, user.name)}
-                        className="p-1.5 rounded-md text-slate-400 hover:text-red-600 hover:bg-red-50 transition-colors cursor-pointer"
+                        className="p-1.5 rounded-md text-slate-400 dark:text-gray-500 hover:text-red-600 dark:hover:text-red-400 hover:bg-red-50 dark:hover:bg-red-950/30 transition-colors cursor-pointer"
                         title="Delete user"
                       >
                         <Trash2 className="w-3.5 h-3.5" />
@@ -419,18 +419,18 @@ export default function UserManagementView({
       </div>
 
       {/* Table Pagination & Summary Footer */}
-      <div className="px-6 py-4 bg-slate-50 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
+      <div className="px-6 py-4 bg-slate-50 dark:bg-[#161616] border-t border-slate-200 dark:border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500 dark:text-gray-400">
         <div>
-          Showing <span className="font-semibold text-slate-800">1</span> to{" "}
-          <span className="font-semibold text-slate-800">{filteredUsers.length}</span> of{" "}
-          <span className="font-semibold text-slate-800">{users.length}</span> entries
+          Showing <span className="font-semibold text-slate-800 dark:text-white">1</span> to{" "}
+          <span className="font-semibold text-slate-800 dark:text-white">{filteredUsers.length}</span> of{" "}
+          <span className="font-semibold text-slate-800 dark:text-white">{users.length}</span> entries
         </div>
 
         <div className="flex items-center gap-1.5">
           <button
             type="button"
             disabled
-            className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded border border-slate-200 bg-white text-slate-400 cursor-not-allowed text-xs font-medium"
+            className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded border border-slate-200 dark:border-white/10 bg-white dark:bg-[#1e1e1e] text-slate-400 dark:text-gray-600 cursor-not-allowed text-xs font-medium"
           >
             <ChevronLeft className="w-3.5 h-3.5" />
             Previous
@@ -444,7 +444,7 @@ export default function UserManagementView({
           <button
             type="button"
             disabled
-            className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded border border-slate-200 bg-white text-slate-400 cursor-not-allowed text-xs font-medium"
+            className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded border border-slate-200 dark:border-white/10 bg-white dark:bg-[#1e1e1e] text-slate-400 dark:text-gray-600 cursor-not-allowed text-xs font-medium"
           >
             Next
             <ChevronRight className="w-3.5 h-3.5" />
@@ -457,23 +457,23 @@ export default function UserManagementView({
       {/* ======================================================== */}
       {isModalOpen && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs animate-in fade-in-0 duration-200"
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 dark:bg-black/80 backdrop-blur-xs animate-in fade-in-0 duration-200"
           onClick={(e) => {
             if (e.target === e.currentTarget) setIsModalOpen(false);
           }}
         >
-          <div className="w-full max-w-2xl bg-white rounded-xl shadow-2xl border border-slate-200 overflow-hidden animate-in zoom-in-95 duration-200">
+          <div className="w-full max-w-2xl bg-white dark:bg-[#191919] rounded-xl shadow-2xl border border-slate-200 dark:border-white/15 overflow-hidden animate-in zoom-in-95 duration-200">
             {/* Modal Header */}
-            <div className="px-6 py-5 border-b border-slate-200 flex items-center justify-between bg-slate-50/70">
+            <div className="px-6 py-5 border-b border-slate-200 dark:border-white/10 flex items-center justify-between bg-slate-50/70 dark:bg-[#161616]">
               <div className="flex items-center gap-3">
-                <div className="w-9 h-9 rounded-lg bg-[#93032E]/10 border border-[#93032E]/20 text-[#93032E] flex items-center justify-center">
+                <div className="w-9 h-9 rounded-lg bg-[#93032E]/10 dark:bg-[#93032E]/25 border border-[#93032E]/20 dark:border-[#93032E]/40 text-[#93032E] dark:text-[#ff4d79] flex items-center justify-center">
                   <User className="w-5 h-5" />
                 </div>
                 <div>
-                  <h2 className="text-lg font-bold text-slate-900">
+                  <h2 className="text-lg font-bold text-slate-900 dark:text-white">
                     Add New User
                   </h2>
-                  <p className="text-xs text-slate-500">
+                  <p className="text-xs text-slate-500 dark:text-gray-400">
                     Enter enterprise credentials and assign role permissions.
                   </p>
                 </div>
@@ -482,7 +482,7 @@ export default function UserManagementView({
               <button
                 type="button"
                 onClick={() => setIsModalOpen(false)}
-                className="w-8 h-8 rounded-lg flex items-center justify-center text-slate-400 hover:text-slate-700 hover:bg-slate-200/60 transition-colors cursor-pointer"
+                className="w-8 h-8 rounded-lg flex items-center justify-center text-slate-400 dark:text-gray-400 hover:text-slate-700 dark:hover:text-white hover:bg-slate-200/60 dark:hover:bg-white/10 transition-colors cursor-pointer"
               >
                 <X className="w-4 h-4" />
               </button>
@@ -493,25 +493,25 @@ export default function UserManagementView({
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {/* 1. Name */}
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 mb-1.5">
-                    Full Name <span className="text-[#93032E]">*</span>
+                  <label className="block text-xs font-semibold text-slate-700 dark:text-gray-300 mb-1.5">
+                    Full Name <span className="text-[#93032E] dark:text-[#ff4d79]">*</span>
                   </label>
                   <div className="relative">
-                    <User className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" />
+                    <User className="w-4 h-4 text-slate-400 dark:text-gray-500 absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" />
                     <input
                       type="text"
                       name="name"
                       value={formData.name}
                       onChange={handleInputChange}
-                      className={`w-full pl-9 pr-3.5 py-2 text-sm bg-white border rounded-lg text-slate-900 focus:outline-none focus:ring-2 ${
+                      className={`w-full pl-9 pr-3.5 py-2 text-sm bg-white dark:bg-[#121212] border rounded-lg text-slate-900 dark:text-white focus:outline-none focus:ring-2 ${
                         formErrors.name
                           ? "border-red-400 focus:ring-red-200"
-                          : "border-slate-300 focus:ring-[#93032E]/30 focus:border-[#93032E]"
+                          : "border-slate-300 dark:border-white/15 focus:ring-[#93032E]/30 focus:border-[#93032E]"
                       }`}
                     />
                   </div>
                   {formErrors.name && (
-                    <p className="text-[11px] text-red-600 mt-1">
+                    <p className="text-[11px] text-red-600 dark:text-red-400 mt-1">
                       {formErrors.name}
                     </p>
                   )}
@@ -519,25 +519,25 @@ export default function UserManagementView({
 
                 {/* 2. User Email */}
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 mb-1.5">
-                    User Email <span className="text-[#93032E]">*</span>
+                  <label className="block text-xs font-semibold text-slate-700 dark:text-gray-300 mb-1.5">
+                    User Email <span className="text-[#93032E] dark:text-[#ff4d79]">*</span>
                   </label>
                   <div className="relative">
-                    <Mail className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" />
+                    <Mail className="w-4 h-4 text-slate-400 dark:text-gray-500 absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" />
                     <input
                       type="email"
                       name="email"
                       value={formData.email}
                       onChange={handleInputChange}
-                      className={`w-full pl-9 pr-3.5 py-2 text-sm bg-white border rounded-lg text-slate-900 focus:outline-none focus:ring-2 ${
+                      className={`w-full pl-9 pr-3.5 py-2 text-sm bg-white dark:bg-[#121212] border rounded-lg text-slate-900 dark:text-white focus:outline-none focus:ring-2 ${
                         formErrors.email
                           ? "border-red-400 focus:ring-red-200"
-                          : "border-slate-300 focus:ring-[#93032E]/30 focus:border-[#93032E]"
+                          : "border-slate-300 dark:border-white/15 focus:ring-[#93032E]/30 focus:border-[#93032E]"
                       }`}
                     />
                   </div>
                   {formErrors.email && (
-                    <p className="text-[11px] text-red-600 mt-1">
+                    <p className="text-[11px] text-red-600 dark:text-red-400 mt-1">
                       {formErrors.email}
                     </p>
                   )}
@@ -547,36 +547,36 @@ export default function UserManagementView({
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {/* 3. Phone */}
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 mb-1.5">
+                  <label className="block text-xs font-semibold text-slate-700 dark:text-gray-300 mb-1.5">
                     Phone Number
                   </label>
                   <div className="relative">
-                    <Phone className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" />
+                    <Phone className="w-4 h-4 text-slate-400 dark:text-gray-500 absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" />
                     <input
                       type="tel"
                       name="phone"
                       value={formData.phone}
                       onChange={handleInputChange}
-                      className="w-full pl-9 pr-3.5 py-2 text-sm bg-white border border-slate-300 rounded-lg text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#93032E]/30 focus:border-[#93032E]"
+                      className="w-full pl-9 pr-3.5 py-2 text-sm bg-white dark:bg-[#121212] border border-slate-300 dark:border-white/15 rounded-lg text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#93032E]/30 focus:border-[#93032E]"
                     />
                   </div>
                 </div>
 
                 {/* 4. Role */}
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 mb-1.5">
-                    Assigned Role <span className="text-[#93032E]">*</span>
+                  <label className="block text-xs font-semibold text-slate-700 dark:text-gray-300 mb-1.5">
+                    Assigned Role <span className="text-[#93032E] dark:text-[#ff4d79]">*</span>
                   </label>
                   <div className="relative">
-                    <Shield className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" />
+                    <Shield className="w-4 h-4 text-slate-400 dark:text-gray-500 absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" />
                     <select
                       name="role"
                       value={formData.role}
                       onChange={handleInputChange}
-                      className="w-full pl-9 pr-8 py-2 text-sm bg-white border border-slate-300 rounded-lg text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#93032E]/30 focus:border-[#93032E] cursor-pointer"
+                      className="w-full pl-9 pr-8 py-2 text-sm bg-white dark:bg-[#121212] border border-slate-300 dark:border-white/15 rounded-lg text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#93032E]/30 focus:border-[#93032E] cursor-pointer"
                     >
                       {AVAILABLE_ROLES.map((role) => (
-                        <option key={role} value={role}>
+                        <option key={role} value={role} className="bg-white dark:bg-[#191919] text-slate-900 dark:text-white">
                           {role}
                         </option>
                       ))}
@@ -587,17 +587,17 @@ export default function UserManagementView({
 
               {/* 5. Address */}
               <div>
-                <label className="block text-xs font-semibold text-slate-700 mb-1.5">
+                <label className="block text-xs font-semibold text-slate-700 dark:text-gray-300 mb-1.5">
                   Physical / Office Address
                 </label>
                 <div className="relative">
-                  <MapPin className="w-4 h-4 text-slate-400 absolute left-3 top-2.5 pointer-events-none" />
+                  <MapPin className="w-4 h-4 text-slate-400 dark:text-gray-500 absolute left-3 top-2.5 pointer-events-none" />
                   <textarea
                     rows={2}
                     name="address"
                     value={formData.address}
                     onChange={handleInputChange}
-                    className="w-full pl-9 pr-3.5 py-2 text-sm bg-white border border-slate-300 rounded-lg text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#93032E]/30 focus:border-[#93032E]"
+                    className="w-full pl-9 pr-3.5 py-2 text-sm bg-white dark:bg-[#121212] border border-slate-300 dark:border-white/15 rounded-lg text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#93032E]/30 focus:border-[#93032E]"
                   />
                 </div>
               </div>
@@ -605,26 +605,26 @@ export default function UserManagementView({
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {/* 6. Password */}
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 mb-1.5">
-                    Account Password <span className="text-[#93032E]">*</span>
+                  <label className="block text-xs font-semibold text-slate-700 dark:text-gray-300 mb-1.5">
+                    Account Password <span className="text-[#93032E] dark:text-[#ff4d79]">*</span>
                   </label>
                   <div className="relative">
-                    <Lock className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" />
+                    <Lock className="w-4 h-4 text-slate-400 dark:text-gray-500 absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" />
                     <input
                       type={showPassword ? "text" : "password"}
                       name="password"
                       value={formData.password}
                       onChange={handleInputChange}
-                      className={`w-full pl-9 pr-10 py-2 text-sm bg-white border rounded-lg text-slate-900 focus:outline-none focus:ring-2 ${
+                      className={`w-full pl-9 pr-10 py-2 text-sm bg-white dark:bg-[#121212] border rounded-lg text-slate-900 dark:text-white focus:outline-none focus:ring-2 ${
                         formErrors.password
                           ? "border-red-400 focus:ring-red-200"
-                          : "border-slate-300 focus:ring-[#93032E]/30 focus:border-[#93032E]"
+                          : "border-slate-300 dark:border-white/15 focus:ring-[#93032E]/30 focus:border-[#93032E]"
                       }`}
                     />
                     <button
                       type="button"
                       onClick={() => setShowPassword((prev) => !prev)}
-                      className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 cursor-pointer"
+                      className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 dark:text-gray-400 hover:text-slate-600 dark:hover:text-white cursor-pointer"
                       title={showPassword ? "Hide password" : "Show password"}
                     >
                       {showPassword ? (
@@ -635,7 +635,7 @@ export default function UserManagementView({
                     </button>
                   </div>
                   {formErrors.password && (
-                    <p className="text-[11px] text-red-600 mt-1">
+                    <p className="text-[11px] text-red-600 dark:text-red-400 mt-1">
                       {formErrors.password}
                     </p>
                   )}
@@ -643,28 +643,28 @@ export default function UserManagementView({
 
                 {/* 7. Password Hint */}
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 mb-1.5">
+                  <label className="block text-xs font-semibold text-slate-700 dark:text-gray-300 mb-1.5">
                     Password Hint
                   </label>
                   <div className="relative">
-                    <HelpCircle className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" />
+                    <HelpCircle className="w-4 h-4 text-slate-400 dark:text-gray-500 absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" />
                     <input
                       type="text"
                       name="passwordHint"
                       value={formData.passwordHint}
                       onChange={handleInputChange}
-                      className="w-full pl-9 pr-3.5 py-2 text-sm bg-white border border-slate-300 rounded-lg text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#93032E]/30 focus:border-[#93032E]"
+                      className="w-full pl-9 pr-3.5 py-2 text-sm bg-white dark:bg-[#121212] border border-slate-300 dark:border-white/15 rounded-lg text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#93032E]/30 focus:border-[#93032E]"
                     />
                   </div>
                 </div>
               </div>
 
               {/* Modal Footer Controls */}
-              <div className="pt-4 border-t border-slate-200 flex items-center justify-end gap-3 mt-6">
+              <div className="pt-4 border-t border-slate-200 dark:border-white/10 flex items-center justify-end gap-3 mt-6">
                 <button
                   type="button"
                   onClick={() => setIsModalOpen(false)}
-                  className="px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 rounded-lg transition-colors cursor-pointer"
+                  className="px-4 py-2 text-sm font-medium text-slate-700 dark:text-gray-300 hover:bg-slate-100 dark:hover:bg-white/10 rounded-lg transition-colors cursor-pointer"
                 >
                   Cancel
                 </button>
