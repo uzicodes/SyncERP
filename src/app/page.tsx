@@ -53,7 +53,7 @@ export default function HomePage() {
               className="font-brand font-bold text-2xl tracking-wider text-white select-none"
               style={{ fontFamily: "'Mazegin', var(--font-mazegin), sans-serif" }}
             >
-              SyncERP<span className="text-[#93032E] font-black">+</span>
+              SYNC-ERP
             </span>
           </div>
 
@@ -226,7 +226,7 @@ export default function HomePage() {
               height={20}
               className="w-5 h-5 object-contain"
             />
-            <p>© 2026 <span className="font-brand font-medium">SyncERP</span> Global Enterprise Solutions. All rights reserved.</p>
+            <p>© 2026 <span className="font-brand font-medium">SYNC-ERP</span> Global Enterprise Solutions. All rights reserved.</p>
           </div>
           <div className="flex items-center gap-6 text-slate-200">
             <span className="hover:text-white cursor-pointer">Security Compliance</span>

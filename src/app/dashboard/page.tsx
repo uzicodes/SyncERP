@@ -36,7 +36,7 @@ export default function DashboardPage() {
               height={18}
               className="w-4 h-4 object-contain"
             />
-            <p>© 2026 <span className="font-brand font-medium">SyncERP</span> Global Enterprise Solutions. All rights reserved.</p>
+            <p>© 2026 <span className="font-brand font-medium">SYNC-ERP</span> Global Enterprise Solutions. All rights reserved.</p>
           </div>
           <div className="flex items-center gap-4 text-gray-400">
             <span className="hover:text-white cursor-pointer">Security Compliance</span>
