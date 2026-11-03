@@ -8,6 +8,7 @@ const erpModules = [
     title: "Commons",
     links: [
       { name: "User Management", href: "/user-management" },
+      { name: "Cross Application", href: "/cross-application" },
     ],
   }
 ];
