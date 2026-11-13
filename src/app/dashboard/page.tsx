@@ -1,16 +1,33 @@
 import Link from "next/link";
 import Image from "next/image";
 import Header from "@/components/Header";
-import { Layers, ChevronRight, ArrowUpRight } from "lucide-react";
+import { Layers, Landmark, ChevronRight, ArrowUpRight } from "lucide-react";
 
 const erpModules = [
   {
     title: "Commons",
+    description: "System administration, user security, organizational entities, and audit tracking.",
+    hubHref: "/cross-application",
+    icon: Layers,
     links: [
       { name: "User Management", href: "/user-management" },
       { name: "Cross Application", href: "/cross-application" },
     ],
-  }
+  },
+  {
+    title: "Accounts",
+    description: "Financial ledger, payables, receivables, petty cash, assets, and liability management.",
+    hubHref: "/accounts",
+    icon: Landmark,
+    links: [
+      { name: "General Ledger", href: "/accounts/general-ledger" },
+      { name: "Accounts Receivable", href: "/accounts/accounts-receivable" },
+      { name: "Accounts Payable", href: "/accounts/accounts-payable" },
+      { name: "Petty Cash & Direct Purchase", href: "/accounts/petty-cash" },
+      { name: "Fixed Assets", href: "/accounts/fixed-assets" },
+      { name: "Loan Management", href: "/accounts/loan-management" },
+    ],
+  },
 ];
 
 export default function DashboardPage() {
@@ -45,14 +62,14 @@ export default function DashboardPage() {
               {/* Module Card Header */}
               <div className="p-5 pb-4 border-b border-[#93032E]/20 bg-[#161616]">
                 <div className="w-10 h-10 rounded-lg bg-[#121212] border border-[#93032E]/40 flex items-center justify-center shadow-xs mb-3 text-[#93032E]">
-                  <Layers className="w-5 h-5" />
+                  <module.icon className="w-5 h-5" />
                 </div>
 
                 <h2 className="font-heading text-lg font-bold text-[#93032E] tracking-wide">
                   {module.title}
                 </h2>
                 <p className="text-xs text-gray-300 mt-1 leading-relaxed">
-                  System administration, user security, organizational entities, and audit tracking.
+                  {module.description}
                 </p>
               </div>
 
@@ -84,7 +101,7 @@ export default function DashboardPage() {
                 <div className="mt-6 pt-3 border-t border-[#93032E]/20 flex items-center justify-between text-xs text-gray-400">
                   <span>Enter {module.title}</span>
                   <Link
-                    href={module.links[0]?.href || "#"}
+                    href={module.hubHref || module.links[0]?.href || "#"}
                     className="inline-flex items-center gap-1 text-[#93032E] hover:underline font-semibold"
                   >
                     Open <ArrowUpRight className="w-3 h-3" />
