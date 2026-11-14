@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import Header from "@/components/Header";
-import { Layers, Landmark, ChevronRight, ArrowUpRight } from "lucide-react";
+import { Layers, Landmark, Boxes, ChevronRight, ArrowUpRight } from "lucide-react";
 
 const erpModules = [
   {
@@ -26,6 +26,20 @@ const erpModules = [
       { name: "Petty Cash & Direct Purchase", href: "/accounts/petty-cash" },
       { name: "Vouchers", href: "/accounts/vouchers" },
       { name: "Loan Management", href: "/accounts/loan-management" },
+    ],
+  },
+  {
+    title: "Inventory Management",
+    description: "Real-time stock tracking, multi-warehouse logistics, valuation, goods movement, and replenishment.",
+    hubHref: "/inventory",
+    icon: Boxes,
+    links: [
+      { name: "Stock Overview", href: "/inventory/stock-overview" },
+      { name: "Goods Movement", href: "/inventory/goods-movement" },
+      { name: "Warehouse & Locations", href: "/inventory/warehouses" },
+      { name: "Physical Cycle Count", href: "/inventory/cycle-count" },
+      { name: "Reorder & Replenishment", href: "/inventory/reorder" },
+      { name: "Inventory Valuation", href: "/inventory/valuation" },
     ],
   },
 ];

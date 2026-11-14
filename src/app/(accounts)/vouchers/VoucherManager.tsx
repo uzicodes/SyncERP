@@ -375,8 +375,8 @@ const INITIAL_VOUCHERS: VoucherFormValues[] = [
 const EMPTY_VOUCHER: VoucherFormValues = {
   voucherNo: "VC-2026-0106",
   voucherType: "Journal Voucher",
-  voucherDate: new Date().toISOString().split("T")[0],
-  postingDate: new Date().toISOString().split("T")[0],
+  voucherDate: "2026-11-14",
+  postingDate: "2026-11-14",
   referenceNo: "",
   currency: "USD",
   exchangeRate: 1.0,

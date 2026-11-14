@@ -22,6 +22,11 @@ const MODULES_LIST: ModuleItem[] = [
     description: "General ledger, receivables, payables & compliance",
   },
   {
+    id: "inventory",
+    name: "Inventory Management",
+    description: "Perpetual stock tracking, multi-warehouse & valuation",
+  },
+  {
     id: "distribution",
     name: "Distribution",
     description: "Omnichannel inventory, warehouse & shipping",

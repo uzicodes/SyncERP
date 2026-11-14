@@ -1,7 +1,8 @@
+import { Suspense } from "react";
 import Link from "next/link";
 import Header from "@/components/Header";
 import VoucherManager from "./VoucherManager";
-import { ArrowLeft, FileSpreadsheet, ShieldCheck } from "lucide-react";
+import { ArrowLeft, FileSpreadsheet, ShieldCheck, Loader2 } from "lucide-react";
 
 export default function VouchersPage() {
   return (
@@ -72,8 +73,17 @@ export default function VouchersPage() {
           </div>
         </div>
 
-        {/* Voucher Manager Client Component */}
-        <VoucherManager />
+        {/* Voucher Manager Client Component wrapped in Suspense for PPR */}
+        <Suspense
+          fallback={
+            <div className="bg-white dark:bg-[#191919] rounded-xl border border-slate-200 dark:border-white/10 p-12 flex flex-col items-center justify-center gap-3">
+              <Loader2 className="w-8 h-8 animate-spin text-[#93032E]" />
+              <span className="text-xs text-slate-500">Loading Voucher Master...</span>
+            </div>
+          }
+        >
+          <VoucherManager />
+        </Suspense>
       </main>
     </div>
   );
