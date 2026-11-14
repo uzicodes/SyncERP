@@ -5,7 +5,7 @@ import {
   ArrowDownLeft,
   ArrowUpRight,
   Wallet,
-  Building,
+  FileSpreadsheet,
   Scale,
   ChevronRight,
 } from "lucide-react";
@@ -38,9 +38,9 @@ const ACCOUNTS_CARDS: HubCard[] = [
     icon: Wallet,
   },
   {
-    title: "Fixed Assets",
-    href: "/accounts/fixed-assets",
-    icon: Building,
+    title: "Vouchers",
+    href: "/accounts/vouchers",
+    icon: FileSpreadsheet,
   },
   {
     title: "Loan Management",

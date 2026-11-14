@@ -16,7 +16,7 @@ const erpModules = [
   },
   {
     title: "Accounts",
-    description: "Financial ledger, payables, receivables, petty cash, assets, and liability management.",
+    description: "Financial ledger, payables, receivables, petty cash, vouchers, and liability management.",
     hubHref: "/accounts",
     icon: Landmark,
     links: [
@@ -24,7 +24,7 @@ const erpModules = [
       { name: "Accounts Receivable", href: "/accounts/accounts-receivable" },
       { name: "Accounts Payable", href: "/accounts/accounts-payable" },
       { name: "Petty Cash & Direct Purchase", href: "/accounts/petty-cash" },
-      { name: "Fixed Assets", href: "/accounts/fixed-assets" },
+      { name: "Vouchers", href: "/accounts/vouchers" },
       { name: "Loan Management", href: "/accounts/loan-management" },
     ],
   },
