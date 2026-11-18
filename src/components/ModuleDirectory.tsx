@@ -40,7 +40,7 @@ const MODULES_DATA: ERPModule[] = [
     subModules: [
       { name: "System Administration", href: "/commons/system-admin" },
       { name: "Company Setup & Entities", href: "/commons/company-setup" },
-      { name: "User Management & Security", href: "/commons/user-management" },
+      { name: "User Management & Security", href: "/user-management" },
       { name: "Role-Based Access Control", href: "/commons/roles" },
       { name: "Master Data Definition", href: "/commons/master-data" },
       { name: "Audit Trail & Logs", href: "/commons/audit-logs" },
@@ -53,9 +53,9 @@ const MODULES_DATA: ERPModule[] = [
     category: "finance",
     iconName: "Landmark",
     subModules: [
-      { name: "General Ledger", href: "/general-ledger" },
-      { name: "Accounts Payable", href: "/accounts-payable" },
-      { name: "Accounts Receivable", href: "/accounts-receivable" },
+      { name: "General Ledger", href: "/accounts/general-ledger" },
+      { name: "Accounts Payable", href: "/accounts/accounts-payable" },
+      { name: "Accounts Receivable", href: "/accounts/accounts-receivable" },
       { name: "Chart of Accounts", href: "/chart-of-accounts" },
       { name: "Cash & Bank Management", href: "/cash-bank" },
       { name: "Taxation & Compliance", href: "/taxation" },
